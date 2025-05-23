@@ -30,38 +30,38 @@ pip install yt-dlp
 
 ## Uso
 
-### Método 1: Modificar el script
-
-1. Abre `twitterDescarga.py`
-2. Modifica la variable `url_por_defecto` con la URL del tweet que quieres descargar
-3. Ejecuta el script:
-```bash
-python3 twitterDescarga.py
-```
-
-### Método 2: Usar argumentos
+El script se usa desde la terminal. La URL del tweet es obligatoria:
 
 ```bash
-python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789" -o "carpeta_destino" -f "mp4"
+python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789"
 ```
 
 ### Opciones
 
-- `-o, --output`: Carpeta donde se guardará el video (por defecto: videos_twitter)
+- `-o, --output`: Carpeta donde se guardará el video (por defecto: /Users/juanbautistaespino/Documents/Geminis/videos)
 - `-f, --format`: Formato de salida del video (por defecto: mp4)
 
-## Ejemplos
+### Ejemplos
 
 ```bash
-# Descargar un video usando la URL por defecto
-python3 twitterDescarga.py
-
-# Descargar un video específico
+# Descargar un video (se guardará en la carpeta por defecto)
 python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789"
 
-# Especificar carpeta de destino y formato
-python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789" -o "mis_videos" -f "mp4"
+# Especificar carpeta de destino
+python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789" -o "/ruta/a/tu/carpeta"
+
+# Especificar formato de salida
+python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789" -f "mp4"
+
+# Especificar carpeta y formato
+python3 twitterDescarga.py "https://twitter.com/usuario/status/123456789" -o "/ruta/a/tu/carpeta" -f "mp4"
 ```
+
+## Notas
+
+- El script creará automáticamente la carpeta de destino si no existe
+- Los videos se guardan con el título del tweet como nombre del archivo
+- Se descarga la mejor calidad disponible del video
 
 ## Licencia
 

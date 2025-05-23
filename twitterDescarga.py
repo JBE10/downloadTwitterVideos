@@ -61,12 +61,8 @@ def validar_url(url):
     return url.startswith(("https://twitter.com/", "https://x.com/"))
 
 def main():
-    # URL por defecto - Reemplaza esto con la URL del tweet que quieres descargar
-    url_por_defecto = "https://x.com/porqueTTarg/status/1925978089009336771"  # <- Reemplaza esta URL
-
     parser = argparse.ArgumentParser(description='Descarga videos de Twitter/X')
-    parser.add_argument('url', nargs='?', default=url_por_defecto,
-                      help='URL del tweet que contiene el video (opcional, por defecto usa la URL en el script)')
+    parser.add_argument('url', help='URL del tweet que contiene el video')
     parser.add_argument('-o', '--output', default='/Users/juanbautistaespino/Documents/Geminis/videos',
                       help='Carpeta donde se guardará el video (default: /Users/juanbautistaespino/Documents/Geminis/videos)')
     parser.add_argument('-f', '--format', default='mp4',
